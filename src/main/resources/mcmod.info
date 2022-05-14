@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "gancube",
+    "name": "Gancube",
+    "description": "KJGanCube",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "KuDikan"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
