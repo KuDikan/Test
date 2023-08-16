@@ -28,6 +28,15 @@ jobs:
         distribution: 'temurin'
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml
+    - name: Apply Cache
+      uses: actions/cache@v3
+      with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+          restore-keys:
+            ${{ runner.os }}-gradle-
     - name: Chmod
       run: chmod +x ./gradlew 
     - name: Build
