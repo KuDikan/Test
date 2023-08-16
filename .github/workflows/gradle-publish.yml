@@ -29,7 +29,7 @@ jobs:
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml
     - name: Build
-      run: ./gradlew build
+      run: chmod +x ./gradlew & ./gradlew build
     - name: Collect Artifact
       uses: actions/upload-artifact@v2.2.4
       with:
