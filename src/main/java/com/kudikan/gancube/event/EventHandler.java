@@ -36,9 +36,9 @@ public class EventHandler {
 			}*/
 		Random r = new Random(114514);
 	        for (IRecipe recipe:recipes){
-			Item item = recipe.getRecipeOutput().getItem();
-			if ("minecraft".equals(item.getRegistryName().getNamespace()) && r.nextDouble()<0.90) {
-				removeRecipe(modRegistry, item.getRegistryName());
+			//Item item = recipe.getRecipeOutput().getItem();
+			if ("minecraft".equals(recipe.getRegistryName().getNamespace()) && r.nextDouble()<0.90) {
+				removeRecipe(modRegistry, recipe.getRegistryName());
 			}
 		}
 	}
