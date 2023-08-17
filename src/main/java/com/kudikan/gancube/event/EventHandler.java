@@ -31,7 +31,7 @@ public class EventHandler {
 		while(iterator.hasNext()) {
 			IRecipe tmpRecipe = iterator.next();
 			recipeResult = tmpRecipe.getRecipeOutput();
-			if (ItemStack) {
+			if (true) {
 				iterator.remove();
 			 }
 		}
