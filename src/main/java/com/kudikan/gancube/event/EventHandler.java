@@ -2,6 +2,7 @@ package com.kudikan.gancube.event;
 
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.ArrayList;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -23,7 +24,7 @@ public class EventHandler {
 		IForgeRegistryModifiable modRegistry = (IForgeRegistryModifiable) event.getRegistry();
 		// removeRecipe(modRegistry, new ResourceLocation("minecraft:diamond_block"));
 		// removeRecipe(modRegistry, new ResourceLocation("minecraft:bread"));
-		Collection<IRecipe> recipes = new Collection<IRecipe>(modRegistry.getValuesCollection());
+		ArrayList<IRecipe> recipes = new ArrayList<IRecipe>(modRegistry.getValuesCollection());
 		/*Iterator<IRecipe> iterator = recipes.iterator();
 		while (iterator.hasNext()) {
 			IRecipe tmpRecipe = iterator.next();
