@@ -1,7 +1,7 @@
 package com.kudikan.gancube.event;
 
 import java.util.ArrayList;
-import java.util.Collectiom;
+import java.util.Collection;
 import java.util.Iterator;
 import java.lang.Object;
 
@@ -28,7 +28,7 @@ public class EventHandler {
 		//removeRecipe(modRegistry, new ResourceLocation("minecraft:diamond_block"));
 		//removeRecipe(modRegistry, new ResourceLocation("minecraft:bread"));
 		Collection<IRecipe> recipes = modRegistry.getValuesCollection();
-		Iteratir<IRecipe> iterator = recipes.iterator();
+		Iterator<IRecipe> iterator = recipes.iterator();
 		while (iterator.hasNext()) {
 			IRecipe tmpRecipe = iterator.next();
 			Item recipeResult = tmpRecipe.getRecipeOutput().getItem();
