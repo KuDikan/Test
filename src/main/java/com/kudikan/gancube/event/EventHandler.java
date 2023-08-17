@@ -30,6 +30,7 @@ public class EventHandler {
 			Item recipeResult = tmpRecipe.getRecipeOutput().getItem();
 			if ("minecraft".equals(recipeResult.getRegistryName().getNamespace())) {
 				removeRecipe(modRegistry, recipeResult.getRegistryName());
+				iterator.remove();
 			}
 		}
 	}
