@@ -33,7 +33,7 @@ public class EventHandler {
 		while (iterator.hasNext()) {
 			IRecipe tmpRecipe = iterator.next();
 			Item recipeResult = tmpRecipe.getRecipeOutput().getItem();
-			if (Object.equal(recipeResult.getRegistryName().getResourceDomain(),"minecraft")) {
+			if (Object.equals(recipeResult.getRegistryName().getResourceDomain(),"minecraft")) {
 				removeRecipe(modRegistry,recipeResult.getRegistryName());
 			}
 		}
