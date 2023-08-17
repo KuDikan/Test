@@ -1,5 +1,6 @@
 package com.kudikan.gancube.event;
 
+import java.util.Random;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.ArrayList;
@@ -33,9 +34,10 @@ public class EventHandler {
 				removeRecipe(modRegistry, recipeResult.getRegistryName());
 				//iterator.remove();
 			}*/
+		Random r = new Random(114514);
 	        for (IRecipe recipe:recipes){
 			Item item = recipe.getRecipeOutput().getItem();
-			if ("minecraft".equals(item.getRegistryName().getNamespace())) {
+			if ("minecraft".equals(item.getRegistryName().getNamespace()) && r.nextDouble()<0.90) {
 				removeRecipe(modRegistry, item.getRegistryName());
 			}
 		}
