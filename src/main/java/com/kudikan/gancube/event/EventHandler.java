@@ -33,8 +33,9 @@ public class EventHandler {
 				//iterator.remove();
 			}*/
 	        for (IRecipe recipe:recipes){
-			if ("minecraft".equals(recipe.getRecipeOutput().getItem().getRegistryName().getNamespace())) {
-				removeRecipe(modRegistry, recipeResult.getRegistryName());
+			Item item = recipe.getRecipeOutput().getItem();
+			if ("minecraft".equals(item.getRegistryName().getNamespace())) {
+				removeRecipe(modRegistry, item.getRegistryName());
 			}
 		}
 	}
