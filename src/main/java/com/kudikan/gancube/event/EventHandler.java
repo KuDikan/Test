@@ -16,15 +16,15 @@ public class EventHandler {
 
     }
     @SubscribeEvent
-	public void registerRecipes(RegistryEvent.Register<IRecipe> event) {
+	public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
 		IForgeRegistryModifiable modRegistry = (IForgeRegistryModifiable) event.getRegistry();
 		removeRecipe(modRegistry, new ResourceLocation("minecraft:diamond_block"));
 		removeRecipe(modRegistry, new ResourceLocation("minecraft:bread"));
     }
-    public void removeRecipe(IForgeRegistryModifiable modRegistry, ResourceLocation recipe) {
+    public static void removeRecipe(IForgeRegistryModifiable modRegistry, ResourceLocation recipe) {
         IRecipe p = (IRecipe)modRegistry.getValue(recipe);
 		
 		modRegistry.remove(recipe);
-		//modRegistry.register(DummyRecipe.from(p));
+		modRegistry.register(DummyRecipe.from(p));
     }
 }   
