@@ -43,10 +43,10 @@ public class EventHandler {
 		}
 	}
 
-	public static void removeRecipe(IForgeRegistryModifiable modRegistry, ResourceLocation recipe) {
+	public static void removeRecipe(IForgeRegistryModifiable modRegistry, IRecipe recipe) {
 		//IRecipe p = (IRecipe) modRegistry.getValue(recipe);
 
-		modRegistry.remove(recipe);
-		//modRegistry.register(DummyRecipe.from(p));
+		modRegistry.remove(recipe.getRegistryName());
+		modRegistry.register(DummyRecipe.from(recipe));
 	}
 }
