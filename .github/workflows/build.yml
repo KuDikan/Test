@@ -43,6 +43,7 @@ jobs:
     - name: Build
       run: ./gradlew build
     - name: Collect Artifact
-      uses: actions/upload-artifact@v2.2.4
+      uses: actions/upload-artifact@v3
       with:
+          name: Mod
           path: ./build/libs/*
