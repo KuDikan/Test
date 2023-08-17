@@ -18,9 +18,10 @@ public class EventHandler {
     @SubscribeEvent
 	public void registerRecipes(RegistryEvent.Register<IRecipe> event) {
 		IForgeRegistryModifiable modRegistry = (IForgeRegistryModifiable) event.getRegistry();
-		RemoveRecipe(modRegistry, new ResourceLocation("minecraft:bed"));
+		removeRecipe(modRegistry, new ResourceLocation("minecraft:diamond_block"));
+		removeRecipe(modRegistry, new ResourceLocation("minecraft:bread"));
     }
-    public void removeRecipes(IForgeRegistryModifiable modRegistry, ResourceLocation recipe) {
+    public void removeRecipe(IForgeRegistryModifiable modRegistry, ResourceLocation recipe) {
         IRecipe p = (IRecipe)modRegistry.getValue(recipe);
 		
 		modRegistry.remove(recipe);
