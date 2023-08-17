@@ -23,7 +23,7 @@ public class EventHandler {
 		IForgeRegistryModifiable modRegistry = (IForgeRegistryModifiable) event.getRegistry();
 		// removeRecipe(modRegistry, new ResourceLocation("minecraft:diamond_block"));
 		// removeRecipe(modRegistry, new ResourceLocation("minecraft:bread"));
-		Collection<IRecipe> recipes = modRegistry.getValuesCollection();
+		Collection<IRecipe> recipes = new Collection<IRecipe>(modRegistry.getValuesCollection());
 		/*Iterator<IRecipe> iterator = recipes.iterator();
 		while (iterator.hasNext()) {
 			IRecipe tmpRecipe = iterator.next();
