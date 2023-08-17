@@ -38,7 +38,7 @@ public class EventHandler {
 	        for (IRecipe recipe:recipes){
 			//Item item = recipe.getRecipeOutput().getItem();
 			if ("minecraft".equals(recipe.getRegistryName().getNamespace())) {
-				removeRecipe(modRegistry, recipe.getRegistryName());
+				removeRecipe(modRegistry, recipe);
 			}
 		}
 	}
