@@ -1,7 +1,9 @@
 package com.kudikan.gancube.event;
 
 import java.util.ArrayList;
+import java.util.Collectiom;
 import java.util.Iterator;
+import java.lang.Object;
 
 import com.kudikan.gancube.event.DummyRecipe;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
@@ -25,15 +27,14 @@ public class EventHandler {
 		IForgeRegistryModifiable modRegistry = (IForgeRegistryModifiable) event.getRegistry();
 		//removeRecipe(modRegistry, new ResourceLocation("minecraft:diamond_block"));
 		//removeRecipe(modRegistry, new ResourceLocation("minecraft:bread"));
-		ItemStack recipeResult = null;
-		ArrayList<IRecipe> recipes = (ArrayList) CraftingManager.getInstance().getRecipeList();
-		Iterator<IRecipe> iterator = recipes.iterator();
-		while(iterator.hasNext()) {
+		Collection<IRecipe> recipes = modRegistry.getValuesCollection();
+		Iteratir<IRecipe> iterator = recipes.iterator();
+		while (iterator.hasNext()) {
 			IRecipe tmpRecipe = iterator.next();
-			recipeResult = tmpRecipe.getRecipeOutput();
-			if (true) {
-				iterator.remove();
-			 }
+			Item recipeResult = tmpRecipe.getRecipeOutput().getItem();
+			if (Object.equal(recipeResult.getRegistryName().getResourceDomain(),"minecraft")) {
+				removeRecipe(modRegistry,recipeResult.getRegistryName());
+			}
 		}
     }
     public static void removeRecipe(IForgeRegistryModifiable modRegistry, ResourceLocation recipe) {
