@@ -25,6 +25,6 @@ public class EventHandler {
         IRecipe p = (IRecipe)modRegistry.getValue(recipe);
 		
 		modRegistry.remove(recipe);
-		modRegistry.register(DummyRecipe.from(p));
+		//modRegistry.register(DummyRecipe.from(p));
     }
 }   
