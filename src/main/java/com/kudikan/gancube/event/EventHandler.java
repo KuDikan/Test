@@ -24,13 +24,17 @@ public class EventHandler {
 		// removeRecipe(modRegistry, new ResourceLocation("minecraft:diamond_block"));
 		// removeRecipe(modRegistry, new ResourceLocation("minecraft:bread"));
 		Collection<IRecipe> recipes = modRegistry.getValuesCollection();
-		Iterator<IRecipe> iterator = recipes.iterator();
+		/*Iterator<IRecipe> iterator = recipes.iterator();
 		while (iterator.hasNext()) {
 			IRecipe tmpRecipe = iterator.next();
 			Item recipeResult = tmpRecipe.getRecipeOutput().getItem();
 			if ("minecraft".equals(recipeResult.getRegistryName().getNamespace())) {
 				removeRecipe(modRegistry, recipeResult.getRegistryName());
-				iterator.remove();
+				//iterator.remove();
+			}*/
+	        for (IRecipe recipe:recipes){
+			if ("minecraft".equals(recipe.getRecipeOutput().getItem().getRegistryName().getNamespace())) {
+				removeRecipe(modRegistry, recipeResult.getRegistryName());
 			}
 		}
 	}
